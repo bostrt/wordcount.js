@@ -1,0 +1,26 @@
+{
+    "name": "wordcount.js",
+    "main": "wordcount.js",
+    "version": "1.0.0-beta1",
+    "homepage": "https://github.com/bostrt/wordcount.js",
+    "authors": [
+	"Robert Bost <bostrt.at.gmail.dot.com>"
+    ],
+    "description": "A library for calculating newlines, words, and bytes of files. Utilized HTML5 File API.",    
+    "keywords": [
+	"wc",
+	"wordcount",
+	"word",
+	"count",
+	"file"
+    ],
+    "license": "MIT",
+    "ignore": [
+	"**/.*",
+	"node_modules",
+	"bower_components",
+	"test",
+	"tests",
+        "nbproject"
+    ]
+}
