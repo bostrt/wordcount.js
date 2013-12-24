@@ -100,7 +100,7 @@
                  var text = e.target.result;
                  if (text != undefined) {
                      text = text.trim(); // Clear ends.
-                     var split = text.split(/\s{1,}/g);
+                     var split = text.split(/\s+/g);
                      if (split.length === 1) {
                          if (split[0].trim() === '') {
                              callback(0, file, inputSelector);
@@ -117,14 +117,32 @@
            reader.readAsText(file);
         });
     };
-    
+
+    /**
+     * When a file is uploaded using the file input element with the given input
+     * selector then the number of chars in the file are calculated and the
+     * callback is called.
+     * @param {type} inputSelector - The selector for a file input element.
+     * @param {type} callback - Called after a file is available and the
+     * number of chars in that file have been calculated. A callback should
+     * take three parameters:
+     * <p><pre>
+     * callback(chars, file, inputSelector)<br/>
+     * &nbsp;<b>chars</b> - The number of chars in the file<br/>
+     * &nbsp;<b>file</b> - The file that was uploaded<br/>
+     * &nbsp;<b>inputSelector</b> - The original input selector for the file<br/>
+     * &nbsp;&nbsp;input element being monitored.
+     * </pre></p>
+     * @returns {int}
+     */    
     WordCount.chars = function(inputSelector, callback) {
         addFileChangeListener(inputSelector, function(file) {
             var reader = new FileReader();
             reader.onload = function(e) {
                 if (e.target.readyState === 2) {
                     var text = e.target.result;
-                    // TODO: Complete..UNICODE vs. UTF-8???
+		    var charsLength = text.split(/./g).length;
+		    callback(charsLength, file, inputSelector);
                 }
             };
             

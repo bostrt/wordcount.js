@@ -11,15 +11,34 @@
                 console.log("onload");
                 
                 WordCount.bytes("input", function(size) {
-                   console.log("size: " + size) ;
+		    $("#bytes").text(size);
                 });
-                WordCount.words("input", function(lines) {
-                    console.log("lines: " + lines) ;
+
+                WordCount.words("input", function(words) {
+		    $("#words").text(words);
                 });
+
+		WordCount.lines("input", function(lines) {
+		    $("#lines").text(lines);
+		});
+
+		WordCount.longest("input", function(longest) {
+		    $("#longest").text(longest.length);
+		});
+
+		WordCount.chars("input", function(chars) {
+		    $("#chars").text(chars);
+		});
             });
         </script>
     </head>
     <body>
         <input type="file" id="input"/>
+	<div><b>Bytes: </b><span id="bytes"></span></div>
+	  <div><b>Words: </b><span id="words"></span></div>
+	  <div><b>Lines: </b><span id="lines"></span></div>
+	  <div><b>Longest: </b><span id="longest"></span></div>
+	  <div><b>Chars: </b><span id="chars"></span></div>
+	</div>
     </body>
 </html>
