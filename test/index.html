@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="../wordcount.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                console.log("onload");
+                
+                WordCount.bytes("input", function(size) {
+		    $("#bytes").text(size);
+                });
+
+                WordCount.words("input", function(words) {
+		    $("#words").text(words);
+                });
+
+		WordCount.lines("input", function(lines) {
+		    $("#lines").text(lines);
+		});
+
+		WordCount.longest("input", function(longest) {
+		    $("#longest").text(longest.length);
+		});
+
+		WordCount.chars("input", function(chars) {
+		    $("#chars").text(chars);
+		});
+            });
+        </script>
+    </head>
+    <body>
+        <input type="file" id="input"/>
+	<div><b>Bytes: </b><span id="bytes"></span></div>
+	  <div><b>Words: </b><span id="words"></span></div>
+	  <div><b>Lines: </b><span id="lines"></span></div>
+	  <div><b>Longest: </b><span id="longest"></span></div>
+	  <div><b>Chars: </b><span id="chars"></span></div>
+	</div>
+    </body>
+</html>
