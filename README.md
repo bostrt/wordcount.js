@@ -14,8 +14,8 @@ Tests
 =====
 
 ```
-$ npm install
-$ npm test
+$ npm install -g mocha
+$ mocha
 ```
 
 Callbacks
