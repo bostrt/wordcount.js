@@ -10,6 +10,14 @@ WordCount.js is a client-side JS library that counts bytes, words, lines
 chars, and calculates the longest line of a file. This library utilized
 the HTML5 File API.
 
+Tests
+=====
+
+```
+$ npm install -g mocha
+$ mocha
+```
+
 Callbacks
 =========
 Callbacks are passed into each of WordCount's
