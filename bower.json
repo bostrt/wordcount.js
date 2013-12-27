@@ -7,6 +7,9 @@
 	"Robert Bost <bostrt.at.gmail.dot.com>"
     ],
     "description": "A library for calculating newlines, words, and bytes of files. Utilizes HTML5 File API.",    
+    "devDependencies": {
+	"mocha": "latest"
+    },
     "keywords": [
 	"wc",
 	"wordcount",
