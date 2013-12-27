@@ -4,6 +4,8 @@ WordCount.js [![Build Status](https://travis-ci.org/bostrt/wordcount.js.png?bran
 
 **Author:** Robert Bost <bostrt at gmail dot com>
 
+**Demo:** http://bostrt.github.io/wordcount.js/
+
 WordCount.js is a client-side JS library that counts bytes, words, lines
 chars, and calculates the longest line of a file. This library utilized
 the HTML5 File API.
