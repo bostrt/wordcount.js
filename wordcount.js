@@ -63,10 +63,10 @@
      * Finds longest line in given text.
      */
     WordCount.longestInText = function(text) {
-	if (text == null) {
-	    return null;
-	}
-	
+        if (text == null) {
+            return null;
+        }
+        
         var split = text.split(/\n/g);
         if (split != null) {
             if (split.length > 1) {
@@ -84,7 +84,7 @@
             // return the only line...
             return text;
         }
-	
+        
     };
 
     /**
@@ -102,7 +102,7 @@
            reader.onload = function(e) {
              if (e.target.readyState === 2) {
                  var text = e.target.result;
-		 callback(WordCount.wordsInText(text), file, inputSelector);
+                 callback(WordCount.wordsInText(text), file, inputSelector);
              }  
            };
            
@@ -114,19 +114,19 @@
      * Find number of words in given text.
      */
     WordCount.wordsInText = function(text) {
-	if (text == null) {
-	    // There is no text.
-	    return 0;
-	}
+        if (text == null) {
+            // There is no text.
+            return 0;
+        }
 
         text = text.trim(); // Clear ends.
         var split = text.split(/\s+/g);
         if (split.length === 1) {
             if (split[0].trim() === '') {
-		// There is no text.
+                // There is no text.
                 return 0;
             } else {
-		// There can be only one.
+                // There can be only one.
                 return 1;
             }
         } else {
@@ -148,8 +148,8 @@
             reader.onload = function(e) {
                 if (e.target.readyState === 2) {
                     var text = e.target.result;
-		    var charsLength = WordCount.charsInText(text);
-		    callback(charsLength, file, inputSelector);
+                    var charsLength = WordCount.charsInText(text);
+                    callback(charsLength, file, inputSelector);
                 }
             };
             
@@ -161,11 +161,11 @@
      * Find number of chars in given text.
      */
     WordCount.charsInText = function(text) {
-	if (text == null) {
-	    return 0;
-	}
-	
-	return text.split(/./g).length;
+        if (text == null) {
+            return 0;
+        }
+        
+        return text.split(/./g).length;
     };
 
     /**
@@ -185,9 +185,9 @@
                     if (e.loaded > 0) {
                         // File has contents
                         var string = e.target.result;
-			callback(WordCount.linesInText(string), file, inputSelector);
+                        callback(WordCount.linesInText(string), file, inputSelector);
                     }
-		}
+                }
             };
             reader.readAsBinaryString(file);
         });
@@ -197,9 +197,9 @@
      * Find number of lines in given text.
      */
     WordCount.linesInText = function(text) {
-	if (text == null) {
-	    return 0;
-	}
+        if (text == null) {
+            return 0;
+        }
         var matching = text.match(/\n/g);
         if (matching != null) {
             return matching.length;
