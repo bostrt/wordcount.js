@@ -1,4 +1,4 @@
-WordCount.js [![Build Status](https://travis-ci.org/bostrt/wordcount.js.png?branch=master)](https://travis-ci.org/bostrt/wordcount.js)
+WordCount.js [![Build Status](https://travis-ci.org/bostrt/wordcount.js.png?branch=master)](https://travis-ci.org/bostrt/wordcount.js) <img src="http://benschwarz.github.io/bower-badges/badge@2x.png" width="130" height="30">
 ============
 *&copy; 2013 Robert Bost*
 
