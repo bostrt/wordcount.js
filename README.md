@@ -8,13 +8,16 @@ WordCount.js is a client-side JS library that counts bytes, words, lines
 chars, and calculates the longest line of a file. This library utilized
 the HTML5 File API.
 
-> # Callbacks
+Callbacks
+=========
 Callbacks are passed into each of WordCount's
 functions. Each callback should accept 3 parameters, (1) the value that the
 function is calculating or finding, (2) the File object that was uploaded,
 (3) and the ID selector of the file input element.
 `callback(value, file, inputSelector)`
 
+API
+===
 
 WordCount.bytes(inputSelector, callback)
 ----------------------------------------
@@ -28,6 +31,32 @@ and then callback is called.
 **inputSelector**:  *String*,  - The selector for a file input element.
 
 **callback**:  *Function*,  - Called when a file has been completely uploaded and bytes have been calculated.
+
+WordCount.chars(inputSelector, callback)
+----------------------------------------
+When a file is uploaded using the file input element with the given input
+selector then the number of chars in the file are calculated and the
+callback is called.
+
+
+**Parameters**
+
+**inputSelector**:  *String*,  - The selector for a file input element.
+
+**callback**:  *Function*,  - Called after a file is available and the number of chars in that file have been calculated.
+
+WordCount.lines(inputSelector, callback)
+----------------------------------------
+When a file is uploaded using the file input element with the given input
+selector then the number of lines in the file are calculated and the
+callback is called.
+
+
+**Parameters**
+
+**inputSelector**:  *String*,  - The selector for a file input element.
+
+**callback**:  *Function*,  - Called after a file is available and the number of lines in that file have been calculated.
 
 WordCount.longest(inputSelector, callback)
 ------------------------------------------
@@ -56,30 +85,3 @@ delimited by white space.
 **inputSelector**:  *String*,  - The selector for a file input element.
 
 **callback**:  *Function*,  - Called after a file is available and the number of words have been calculated.
-
-WordCount.chars(inputSelector, callback)
-----------------------------------------
-When a file is uploaded using the file input element with the given input
-selector then the number of chars in the file are calculated and the
-callback is called.
-
-
-**Parameters**
-
-**inputSelector**:  *String*,  - The selector for a file input element.
-
-**callback**:  *Function*,  - Called after a file is available and the number of chars in that file have been calculated.
-
-WordCount.lines(inputSelector, callback)
-----------------------------------------
-When a file is uploaded using the file input element with the given input
-selector then the number of lines in the file are calculated and the
-callback is called.
-
-
-**Parameters**
-
-**inputSelector**:  *String*,  - The selector for a file input element.
-
-**callback**:  *Function*,  - Called after a file is available and the number of lines in that file have been calculated.
-
