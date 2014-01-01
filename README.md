@@ -19,7 +19,14 @@ Examples
 ========
 
 ```
-<script type="text/javascript" src="wordcount.js"></script>
+<html>
+  <head>
+    <script type="text/javascript" src="wordcount.js"></script>
+  </head>
+  <body>
+    <input type="file" id="input"/>
+  </body>
+</html>
 ...
 
 WordCount.bytes("input", function(size, file, inputSelector) {
