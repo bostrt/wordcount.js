@@ -15,6 +15,23 @@ Install
 
 `$ bower install wordcount.js`
 
+Examples
+========
+
+```
+<script type="text/javascript" src="wordcount.js"></script>
+...
+
+WordCount.bytes("input", function(size, file, inputSelector) {
+  console.log("Number of bytes: " + size);
+});
+
+
+WordCount.chars("input", function(chars) {
+  console.log("Number of characters: " + chars);
+});
+```
+
 Tests
 =====
 
