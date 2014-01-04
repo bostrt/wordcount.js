@@ -198,14 +198,20 @@
      */
     WordCount.linesInText = function(text) {
         if (text == null) {
+	    // File contents null...zero lines
             return 0;
         }
         var matching = text.match(/\n/g);
         if (matching != null) {
             return matching.length;
         } else {
-            // File has content but no newlines...must be a single line!
-            return 1;
+            // File has content but no newlines. If file is empty
+	    // return zero lines, otherwise there is only a single line
+	    if (text.trim().length == 0) {
+		return 0;
+	    } else {
+		return 1;
+	    }
         }
     };
 

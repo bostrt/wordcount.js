@@ -4,6 +4,9 @@ var wc = require('../wordcount.js');
 
 file1 = fs.readFileSync('test/file1.txt', 'utf-8');
 file2 = fs.readFileSync('test/file2.txt', 'utf-8');
+emptyFile = fs.readFileSync('test/empty.txt', 'utf-8');
+newLinesFile = fs.readFileSync('test/newlinesonly.txt', 'utf-8');
+oneNewLineFile = fs.readFileSync('test/onenewline.txt', 'utf-8');
 
 describe('WordCount', function() {
     describe('longest', function() {
@@ -24,6 +27,15 @@ describe('WordCount', function() {
 	it('should find number of lines', function() {
 	    assert.equal(wc.linesInText(file1), 3);
 	    assert.equal(wc.linesInText(file2), 299);
+	});
+	it('should be zero lines', function() {
+	    assert.equal(wc.linesInText(emptyFile), 0);
+	});
+	it('should be 4 lines', function() {
+	    assert.equal(wc.linesInText(newLinesFile), 4);
+	});
+	it('should be 1 line', function() {
+	    assert.equal(wc.linesInText(oneNewLineFile), 1);
 	});
     });
 
