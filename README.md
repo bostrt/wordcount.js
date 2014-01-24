@@ -12,7 +12,7 @@ chars, and calculates the longest line of a file using the HTML5 File API.
 Install
 =======
 
-`$ bower install wordcount.js`
+    bower install wordcount.js
 
 Examples
 ========
@@ -41,10 +41,8 @@ WordCount.chars("input", function(chars) {
 Tests
 =====
 
-```
-$ npm install -g mocha
-$ mocha
-```
+    npm install -g mocha
+    mocha
 
 # Callbacks
 Callbacks are passed into each of WordCount's
