@@ -47,8 +47,8 @@ describe('WordCount', function() {
 
     describe('chars', function() {
 	it('should find number of chars', function() {
-	    assert.equal(wc.charsInText(file1), 38);
-	    assert.equal(wc.charsInText(file2), 91217);
+	    assert.equal(wc.charsInText(file1), 40);
+	    assert.equal(wc.charsInText(file2), 91515);
 	});
     });
 });
