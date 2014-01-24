@@ -9,7 +9,13 @@ newLinesFile = fs.readFileSync('test/newlinesonly.txt', 'utf-8');
 oneNewLineFile = fs.readFileSync('test/onenewline.txt', 'utf-8');
 
 describe('WordCount', function() {
-    describe('longest', function() {
+    describe('simple test', function() {
+	it('should work on simple string', function() {
+		assert.equal(wc.wordsInText('Lorem ipsum'), 2);
+	});
+	});
+
+	describe('longest', function() {
 	it('should find longest lines', function() {
 	    assert.equal(wc.longestInText(file1).length, 25);
 	    assert.equal(wc.longestInText(file2).length, 1038);
