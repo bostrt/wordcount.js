@@ -51,7 +51,7 @@
             reader.onload = function(e) {
                 if (e.target.readyState === 2) {
                     var text = e.target.result;
-                    callback(WordCount.longestInText(text) ,file, selector);
+                    callback(WordCount.longestInText(text), file, selector);
                 }
             };
             
@@ -63,26 +63,21 @@
      * Finds longest line in given text.
      */
     WordCount.longestInText = function(text) {
-        if (text == null) {
+        if (!text) {
             return null;
         }
         
         var split = text.split(/\n/g);
-        if (split != null) {
-            if (split.length > 1) {
-                var longest = split[0];
-                for (var i = 1; i < split.length; i++) {
-                    if (longest.length < split[i].length) {
-                        longest = split[i];
-                    }
-                }
-                return longest;
-            } else {
-                return split[0];
+        if (split.length > 2) {
+            var longest = split[0];
+            for (var i = 1; i < split.length; i++) {
+               if (longest.length < split[i].length) {
+                   longest = split[i];
+               }
             }
+            return longest;
         } else {
-            // return the only line...
-            return text;
+            return split[0];
         }
         
     };
@@ -114,7 +109,7 @@
      * Find number of words in given text.
      */
     WordCount.wordsInText = function(text) {
-        if (text == null) {
+        if (!text) {
             // There is no text.
             return 0;
         }
@@ -123,10 +118,8 @@
         var split = text.split(/\s+/g);
         if (split.length === 1) {
             if (split[0].trim() === '') {
-                // There is no text.
                 return 0;
             } else {
-                // There can be only one.
                 return 1;
             }
         } else {
@@ -161,7 +154,7 @@
      * Find number of chars in given text.
      */
     WordCount.charsInText = function(text) {
-        if (text == null) {
+        if (!text) {
             return 0;
         }
         
